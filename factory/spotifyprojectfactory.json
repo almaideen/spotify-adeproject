@@ -1,0 +1,15 @@
+{
+	"name": "spotifyprojectfactory",
+	"properties": {
+		"trustModeClaimForMi": {
+			"value": "Disabled",
+			"editable": true
+		}
+	},
+	"location": "centralindia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "9e97a0f8-43b1-4c2c-97f5-3c01bb8f0ac6",
+		"tenantId": "4ad6827d-0ef0-4ed7-aa1b-63eeea34681c"
+	}
+}
