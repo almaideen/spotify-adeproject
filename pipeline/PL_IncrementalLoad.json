@@ -295,6 +295,15 @@
 										"typeProperties": {
 											"source": {
 												"type": "JsonSource",
+												"additionalColumns": [
+													{
+														"name": "cdc",
+														"value": {
+															"value": "@activity('Script_maxcdc').output.resultSets[0].rows[0].cdc",
+															"type": "Expression"
+														}
+													}
+												],
 												"storeSettings": {
 													"type": "AzureBlobFSReadSettings",
 													"recursive": true,
@@ -321,7 +330,7 @@
 												"type": "DatasetReference",
 												"parameters": {
 													"folder": {
-														"value": "@activity('Lookup-Sqltables').output.value[0].TABLE_NAME",
+														"value": "@concat(activity('Lookup-Sqltables').output.value[0].TABLE_NAME,'_cdc')",
 														"type": "Expression"
 													},
 													"filename": "empty.json"
@@ -334,7 +343,7 @@
 												"type": "DatasetReference",
 												"parameters": {
 													"folder": {
-														"value": "@activity('Lookup-Sqltables').output.value[0].TABLE_NAME",
+														"value": "@concat(activity('Lookup-Sqltables').output.value[0].TABLE_NAME,'_cdc')",
 														"type": "Expression"
 													}
 												}
