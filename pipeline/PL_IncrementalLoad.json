@@ -131,7 +131,7 @@
 								"source": {
 									"type": "AzureSqlSource",
 									"sqlReaderQuery": {
-										"value": "SELECT * FROM @{item().TABLE_SCHEMA}.@{item().TABLE_NAME} WHERE updated_at > '@{activity('Lookup_cdc').output.value[0].cdc}'\n",
+										"value": "SELECT * FROM @{item().TABLE_SCHEMA}.@{item().TABLE_NAME} WHERE updated_at > '@{activity('Lookup_cdc').output.value[0].cdc}'",
 										"type": "Expression"
 									},
 									"queryTimeout": "02:00:00",
